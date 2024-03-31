@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom"
+import {BrowserRouter, Routes, Route, useLocation, HashRouter} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import './style.css'
@@ -15,7 +15,7 @@ import Cart from "./Cart";
 import Header from "./Header";
 import Footer from "./Footer";
 
-function App() {
+function App()   { 
   const [cartCtr, setCartCtr] = useState(0)
   const [cartItems, setCartItems] = useState(() => {
     const storedCart = localStorage.getItem("cart");
@@ -38,8 +38,8 @@ function App() {
   return (
     <div>
       <Header cartCtr={cartCtr} setCartCtr={setCartCtr} cartItems={cartItems} />
-      <BrowserRouter>
-        <Routes>
+      <BrowserRouter   >
+        <Routes  >
         <Route index element={<Home />}/>
           <Route path="/" element={<Home />}/>
           <Route path="/Home" element={<Home />}/>
